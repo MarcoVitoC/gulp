@@ -1,11 +1,15 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
     name='gulp',
     version='0.1.0',
-    py_modules=['gulp'],
+    package_dir={'': 'src'},
+    packages=find_packages(where='src'),
     install_requires=[
         'Click',
+        'schedule',
+        'plyer',
+        'pyautostart'
     ],
     entry_points={
         'console_scripts': [
