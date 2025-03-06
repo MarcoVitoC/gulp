@@ -28,6 +28,10 @@ def load_config():
             "is_running": False
         }
     
+def check_status():
+    config = load_config()
+    return config.get("is_running")
+    
 def stop_reminder():
     config = load_config()
 

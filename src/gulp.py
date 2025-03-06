@@ -2,7 +2,7 @@ import click
 import json
 import os
 from pyautostart import SmartAutostart
-from reminder import start_reminder, stop_reminder
+from reminder import start_reminder, stop_reminder, check_status
 
 APP_NAME = 'Gulp'
 DEFAULT_INTERVAL = 10
@@ -38,6 +38,11 @@ def start():
 @cli.command(help='To stop reminder')
 def stop():
     stop_reminder()
+
+@cli.command(help='To check reminder status')
+def status():
+    is_running = check_status()
+    click.echo('Gulp is running!' if is_running else 'Gulp is not running!')
 
 @cli.command(help='To set new reminder interval and message')
 @click.option('--interval', '-i', default=DEFAULT_INTERVAL, help='Reminder interval in minutes')

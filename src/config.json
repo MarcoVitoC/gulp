@@ -1,5 +1,5 @@
 {
-    "interval": 3,
-    "message": "waterrr",
+    "interval": 10,
+    "message": "Drink water, stay hydrated!",
     "is_running": false
 }
