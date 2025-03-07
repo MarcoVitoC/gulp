@@ -5,7 +5,7 @@ from pyautostart import SmartAutostart
 from reminder import start_reminder, stop_reminder, check_status
 
 APP_NAME = 'Gulp'
-DEFAULT_INTERVAL = 10
+DEFAULT_INTERVAL = 20
 DEFAULT_MESSAGE = 'Drink water, stay hydrated!'
 CONFIG = os.path.join(os.path.dirname(__file__), 'config.json')
 
@@ -66,15 +66,15 @@ def set(interval, message):
     except Exception as e:
         click.echo(f'Error when saving reminder settings: {e}')
 
-@cli.command(help='To enable reminder at startup')
-def enable_startup():
-    autostart.enable(APP_NAME, options=options)
-    click.echo('Gulp has been successfully enabled at startup')
+# @cli.command(help='To enable reminder at startup')
+# def enable_startup():
+#     autostart.enable(APP_NAME, options=options)
+#     click.echo('Gulp has been successfully enabled at startup')
 
-@cli.command(help='To disable reminder at startup')
-def disable_startup():
-    autostart.disable(APP_NAME)
-    click.echo('Gulp startup is already disabled')
+# @cli.command(help='To disable reminder at startup')
+# def disable_startup():
+#     autostart.disable(APP_NAME)
+#     click.echo('Gulp startup is already disabled')
 
 if __name__ == '__main__':
     cli()

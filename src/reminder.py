@@ -5,7 +5,7 @@ import os
 from plyer import notification
 
 APP_NAME = 'Gulp'
-DEFAULT_INTERVAL = 10
+DEFAULT_INTERVAL = 20
 DEFAULT_MESSAGE = 'Drink water, stay hydrated!'
 CONFIG = os.path.join(os.path.dirname(__file__), 'config.json')
 
@@ -61,7 +61,7 @@ def start_reminder():
 
     interval = config.get("interval")
     message = config.get("message")
-    schedule.every(interval).seconds.do(notify, message)
+    schedule.every(interval).minutes.do(notify, message)
 
     print('Reminder starts!')
     while True:
